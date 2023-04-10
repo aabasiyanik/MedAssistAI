@@ -1,4 +1,4 @@
-button {
+.get-started-btn {
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -14,8 +14,8 @@ button {
     transition: 4s;
 }
 
-button:before,
-button:after {
+.get-started-btn:before,
+.get-started-btn:after {
     content: '';
     position: absolute;
     top: -1.5em;
@@ -27,25 +27,25 @@ button:after {
     transition: 4s;
 }
 
-button:before {
+.get-started-btn:before {
     left: -80%;
     transform: translate3d(0, 5em, 0) rotate(-340deg);
 }
 
-button:after {
+.get-started-btn:after {
     right: -80%;
     transform: translate3d(0, 5em, 0) rotate(390deg);
 }
 
-button:hover,
-button:focus {
+.get-started-btn:hover,
+.get-started-btn:focus {
     color: white;
     background-color: #6D67E4(0, 0, 255, 0.75);
 }
 
-button:hover:before,
-button:hover:after,
-button:focus:before,
-button:focus:after {
+.get-started-btn:hover:before,
+.get-started-btn:hover:after,
+.get-started-btn:focus:before,
+.get-started-btn:focus:after {
     transform: none;
 }

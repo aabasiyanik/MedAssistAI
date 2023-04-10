@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="pills.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="button-styles.css">
+    <link rel="stylesheet" href="questionnaire.css">
     <script src="scripts.js"></script>
 </head>
 <body>
@@ -15,13 +16,14 @@
             <li><span>identifying potential health concerns</span></li>
             <li><span>suggesting possible treatments</span></li>
             <li><span>guiding you towards better health</span></li>
-            </ul>
-            <button id="get-started" onclick="toggleInput()">Get Started</button>
-            <div id="input-container" style="display:none;">
-              <textarea id="user-input" rows="4" cols="50" placeholder="Enter your text here..."></textarea>
-              <br>
-              <button onclick="submitText()">Submit</button>
-            </div>
+        </ul>
+        <button id="get-started" class="get-started-btn" onclick="startQuestionnaire()">Get Started</button>
+        <div id="question-container" style="display:none;">
+            <p id="question-text"></p>
+            <input type="text" id="answer-input" placeholder="Enter your answer" />
+            <br>
+            <button class="next-btn" onclick="submitAnswer()">Next</button>
         </div>
-    </body>
+    </div>
+</body>
 </html>

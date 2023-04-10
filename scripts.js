@@ -1,24 +1,53 @@
-function toggleInput() {
-    var inputContainer = document.getElementById("input-container");
-    var getStartedButton = document.getElementById("get-started");
-    var staticText = document.querySelector(".static-txt");
-    var dynamicTexts = document.querySelector(".dynamic-txts");
+const questions = [
+    "What is your age/gender? Ex:'age/gender'",
+    "What symptoms are you experiencing? Please describe them in detail.",
+    "Do you have any pre-existing medical conditions or take any medications regularly?"
+  ];
   
-    if (inputContainer.style.display === "none") {
-      inputContainer.style.display = "block";
-      getStartedButton.style.display = "none";
-      staticText.style.display = "none";
-      dynamicTexts.style.display = "none";
+  let currentQuestionIndex = 0;
+  let answers = [];
+  
+  function startQuestionnaire() {
+    const getStartedButton = document.getElementById("get-started");
+    getStartedButton.style.display = "none";
+    const staticText = document.querySelector(".static-txt");
+    staticText.style.display = "none";
+    const dynamicTexts = document.querySelector(".dynamic-txts");
+    dynamicTexts.style.display = "none";
+  
+    const questionContainer = document.getElementById("question-container");
+    questionContainer.style.display = "block";
+  
+    showQuestion();
+  }
+  
+  function showQuestion() {
+    const questionText = document.getElementById("question-text");
+    questionText.textContent = questions[currentQuestionIndex];
+  }
+  
+  function submitAnswer() {
+    const answerInput = document.getElementById("answer-input");
+    answers.push(answerInput.value);
+    answerInput.value = "";
+  
+    currentQuestionIndex++;
+  
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
     } else {
-      inputContainer.style.display = "none";
-      getStartedButton.style.display = "block";
-      staticText.style.display = "block";
-      dynamicTexts.style.display = "block";
+      processAnswers();
     }
   }
   
-  function submitText() {
-    var userInput = document.getElementById("user-input").value;
-    console.log(userInput); // Replace this line with code to process the submitted text
+  function processAnswers() {
+    // Here, you can process the user's answers as needed
+    console.log(answers);
+  
+    // Reset the questionnaire if you want to start over
+    currentQuestionIndex = 0;
+    answers = [];
+    const questionContainer = document.getElementById("question-container");
+    questionContainer.style.display = "none";
   }
   
