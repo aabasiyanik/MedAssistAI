@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="pills.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="button-styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -15,9 +16,12 @@
             <li><span>suggesting possible treatments</span></li>
             <li><span>guiding you towards better health</span></li>
             </ul>
-            <button>Get Started</button>
+            <button id="get-started" onclick="toggleInput()">Get Started</button>
+            <div id="input-container" style="display:none;">
+              <textarea id="user-input" rows="4" cols="50" placeholder="Enter your text here..."></textarea>
+              <br>
+              <button onclick="submitText()">Submit</button>
+            </div>
         </div>
-
-
     </body>
-    </html>
+</html>
